@@ -1,0 +1,13 @@
+@startuml
+actor User
+participant CoffeeMachine
+participant WaterTank
+participant Heater
+
+User -> CoffeeMachine : pressButton()
+CoffeeMachine -> WaterTank : getWater(200)
+WaterTank --> CoffeeMachine : water: 200ml
+CoffeeMachine -> Heater : heat(92)
+Heater --> CoffeeMachine : done: boolean
+CoffeeMachine --> User : coffee ready
+@enduml

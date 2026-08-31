@@ -1,0 +1,21 @@
+@startuml
+class CoffeeMachine {
+  -waterLevel: int
+  -temperature: float
+  +turnOn(): void
+  +brewCoffee(amount: int): boolean
+}
+
+class Cup {
+  -content: string
+  -volume: int
+}
+
+class User {
+  -name: string
+  +pressButton(): void
+}
+
+User --> CoffeeMachine : uses
+CoffeeMachine *-- Cup : fills
+@enduml
